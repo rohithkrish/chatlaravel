@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('chargpt.chat');
 });
+
+use App\Http\Controllers\ChatController;
+
+Route::post('/chat', [ChatController::class, 'streamChat']);
+
+Route::get('/gethistory', [ChatController::class, 'getHistory']);

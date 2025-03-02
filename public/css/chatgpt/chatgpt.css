@@ -1,0 +1,132 @@
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      height: 100vh;
+      background-color: #f4f7fc;
+      overflow: hidden;
+    }
+
+    /* Sidebar Styles */
+    #sidebar {
+      width: 250px;
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      transition: 0.3s ease;
+      transform: translateX(0); /* Sidebar starts in view */
+    }
+    #sidebar.closed {
+      transform: translateX(-250px); /* Move sidebar out of view */
+    }
+    #sidebar h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      margin-top: 39.92px;
+    }
+    #sidebar ul {
+      list-style-type: none;
+    }
+    #sidebar ul li {
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    #sidebar ul li:hover {
+      color: #3498db;
+    }
+
+    /* Main Content Styles */
+    #main {
+      margin-left: 250px;
+      width: 100%;
+      padding-left: 61px;
+      transition: margin-left 0.3s ease;
+    }
+    #main.shifted {
+      margin-left: 0; /* Shift content when sidebar is closed */
+    }
+
+    /* Chat Box Styles */
+    #chatBox {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      height: 500px;
+      max-width: 1500px;
+      overflow-y: auto;
+    }
+    #chatBox .message {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: flex-start;
+    }
+    #chatBox .message.user {
+      justify-content: flex-end;
+    }
+    #chatBox .message p {
+      background-color: #ecf0f1;
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 60%;
+    }
+    #chatBox .message.bot p {
+      background-color: #3498db;
+      color: white;
+    }
+
+    /* Input Box Styles */
+    #inputBox {
+      display: flex;
+      margin-top: 20px;
+      padding-left: 51px;
+      width: 1500px; 
+    }
+    #inputBox input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 25px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+      outline: none;
+    }
+    #inputBox button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    #inputBox button:hover {
+      background-color: #2980b9;
+    }
+
+    /* Toggle Button Styles */
+    #toggleButton {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #2c3e50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      z-index: 100;
+    }
+    #toggleButton:hover {
+      background-color: #3498db;
+    }
+  </style>
